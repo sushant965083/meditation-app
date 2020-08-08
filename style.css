@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Satisfy', cursive;
+    background: #2F4F4F url('img/relax.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 40px;
+}
+.gradient-circle {
+    background:
+    conic-gradient(
+      #55b7a4 0%,
+      #4ca493 40%,
+      #4ca493 20%,
+      #336d62 60%,
+      #336d62 60%,
+      #2a5b52 100%
+    );
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+.main-circle {
+    background: rgb(235,233,92);
+    background: radial-gradient(circle, rgba(235,233,92,1) 0%, rgba(148,187,233,1) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50%;
+}
+.circle-container {
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    width: 20px;
+    height: 190px;
+    animation: move 7s linear forwards infinite;
+    transform-origin: bottom center;    
+}
+.small-circle {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+
+}
+.container.grow {
+    animation: grow 3s linear forwards;
+}
+.container.shrink {
+    animation: shrink 3s linear forwards;
+}
+
+@keyframes move {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
